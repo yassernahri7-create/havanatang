@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Havana Beach Club – La noche más electrizante de Tánger. Reserva tu mesa ahora.">
+    <title>HAVANA BEACH CLUB 🔥</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800;900&family=Cairo:wght@400;700;900&family=Orbitron:wght@400;700;900&family=Aref+Ruqaa:wght@400;700&family=Yellowtail&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="i18n.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ===================== DYNAMIC BACKGROUND ===================== -->
+    <div class="bg-wrapper">
+        <div class="bg-grid"></div>
+        <div class="neon-glow-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+    </div>
+
+    <!-- ===================== NOISE OVERLAY ===================== -->
+    <div class="noise-overlay"></div>
+
+    <!-- ===================== TOP BAR ===================== -->
+    <div class="top-bar">
+        <div class="top-bar-social emoji-social">
+            <a href="#" id="top-link-instagram" target="_blank" class="emoji-link" title="Instagram">📸
+                <span>Insta</span></a>
+            <a href="#" id="top-link-facebook" target="_blank" class="emoji-link" title="Facebook">👤
+                <span data-i18n="social-fb">Facebook</span></a>
+            <a href="#" id="top-link-tiktok" target="_blank" class="emoji-link" title="TikTok">🎵
+                <span>TikTok</span></a>
+            <a href="#" id="top-link-whatsapp" target="_blank" class="emoji-link" title="WhatsApp">📱
+                <span>WhatsApp</span></a>
+        </div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="navbar">
+        <a href="#hero" class="nav-logo grand-logo">
+            <div class="grand-logo-circle">
+                <div class="gl-sun"></div>
+                <div class="gl-ocean"></div>
+                <div class="gl-palm gl-palm-left">🌴</div>
+                <div class="gl-palm gl-palm-right">🌴</div>
+            </div>
+            <div class="grand-logo-text">
+                <span class="gl-havana">HAVANA</span>
+                <span class="gl-beach">Beach Club</span>
+            </div>
+        </a>
+        <button class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu-wrapper" id="navMenuWrapper">
+            <div class="nav-links" id="navLinks">
+                <a href="#el-club" class="nav-item" data-i18n="nav-club">El Club</a>
+                <a href="#eventos" class="nav-item" data-i18n="nav-ev">Fiestas</a>
+                <a href="#fotos" class="nav-item" data-i18n="nav-ph">Galería</a>
+                <a href="#carta" class="nav-item" data-i18n="nav-menu">Carta</a>
+                <a href="#reserva" class="nav-item nav-cta">
+                    <i class="fab fa-whatsapp"></i> <span data-i18n="nav-res">Book VIP</span>
+                </a>
+            </div>
+
+            <div class="lang-pill-container" id="langPillContainer">
+                <button class="lang-pill-active" id="currentLang" onclick="toggleLangDropdown()">EN</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-btn" data-lang="en" onclick="setLanguage('en'); closeLangDropdown();">🇬🇧
+                        EN</button>
+                    <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr'); closeLangDropdown();">🇫🇷
+                        FR</button>
+                    <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar'); closeLangDropdown();">🇲🇦
+                        AR</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section id="hero" class="hero-section">
+        <!-- Animated background layers -->
+        <div class="hero-bg">
+            <img src="club_bg.png" alt="Havana Club" class="hero-bg-img">
+            <div class="hero-overlay"></div>
+            <div class="hero-grid"></div>
+        </div>
+
+        <!-- Laser beams -->
+        <div class="lasers">
+            <div class="laser laser-1"></div>
+            <div class="laser laser-2"></div>
+            <div class="laser laser-3"></div>
+            <div class="laser laser-4"></div>
+            <div class="laser laser-5"></div>
+        </div>
+
+        <!-- Floating orbs -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+        <!-- Content -->
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span data-i18n="hero-badge">ABIERTO ESTA NOCHE · TÁNGER</span>
+            </div>
+            <h1 class="hero-title reveal-stagger">
+                <div class="summer-vibe-decor">
+                    <div class="decor-sun"></div>
+                    <div class="decor-palm p-left"><i class="fas fa-palm-tree"></i></div>
+                    <div class="decor-palm p-right"><i class="fas fa-palm-tree"></i></div>
+                </div>
+                <span class="title-line-1 reveal-word" data-i18n="hero-t1">DANCING &</span>
+                <span class="title-line-2 reveal-word"><span data-i18n="hero-t2">NIGHT CLUB</span></span>
+            </h1>
+            <p class="hero-tagline neon-text-flicker" data-i18n="hero-tag">⚡ GET THE PARTY STARTED ⚡ 🕝 DOOR OPEN AT
+                11PM</p>
+            <div class="hero-actions">
+                <a href="#reserva" class="btn-primary">
+                    <i class="fab fa-whatsapp"></i>
+                    <span data-i18n="btn-res">Reservar Mesa</span>
+                </a>
+                <a href="#carta" class="btn-ghost">
+                    <span data-i18n="btn-menu">Ver la Carta</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll hint -->
+        <div class="hero-scroll-hint">
+            <span data-i18n="hero-scroll">SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+
+        <!-- Equalizer bars (decorative) -->
+        <div class="eq-bars">
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+        </div>
+    </section>
+
+    <!-- ===================== EL CLUB ===================== -->
+    <section id="el-club" class="section club-section">
+        <div class="container">
+            <div class="split-layout">
+                <div class="split-text">
+                    <p class="eyebrow neon-text" data-i18n="club-ey">🎉 Nuestra Vibra</p>
+                    <h2 class="section-heading" data-i18n="club-h">El Club</h2>
+                    <div class="neon-line"></div>
+                    <p class="body-text" data-i18n="club-p1">Havana Beach Club es la experiencia nocturna más
+                        electrizante de Tánger. Desde 2020, hemos transformado cada noche en un evento inolvidable. DJ's
+                        de talla mundial, cocktails de autor y una pista de baile que nunca para.</p>
+                    <p class="body-text" data-i18n="club-p2">A orillas del Mediterráneo, nuestro espacio fusiona la
+                        energía del club con el exotismo tropical. Aquí cada fin de semana es un festival privado — y tú
+                        estás invitado.</p>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <span class="stat-number neon-text">150+</span>
+                            <span class="stat-label" data-i18n="stat1">Eventos / año</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number neon-purple">300</span>
+                            <span class="stat-label" data-i18n="stat2">Cap. máxima</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number neon-pink">7/7</span>
+                            <span class="stat-label" data-i18n="stat3">Abiertos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="split-visual">
+                    <div class="club-img-frame">
+                        <img src="club_bg.png" alt="Interior Havana" class="club-photo">
+                        <div class="img-glow"></div>
+                    </div>
+                    <div class="floating-tag tag-1">🔥 TONIGHT</div>
+                    <div class="floating-tag tag-2">⚡ SOLD OUT</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CALENDARIO ===================== -->
+    <section id="calendario" class="section calendario-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="eyebrow neon-purple" data-i18n="cal-ey">📅 Agenda</p>
+                <h2 class="section-heading light"><span data-i18n="cal-h">Próximos Eventos</span></h2>
+                <div class="neon-line purple centered"></div>
+            </div>
+
+            <div class="events-grid" id="dynamic-events">
+                <!-- Events will be loaded here dynamically by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== EVENTOS / CUMPLEAÑOS ===================== -->
+    <section id="eventos" class="section eventos-section">
+        <div class="container">
+            <div class="split-layout reverse">
+                <div class="split-text">
+                    <p class="eyebrow neon-pink" data-i18n="ev-ey">🎂 Celebraciones</p>
+                    <h2 class="section-heading"><span data-i18n="ev-h1">Haz tu fiesta</span><br><span class="neon-pink"
+                            data-i18n="ev-h2">ÉPICA</span></h2>
+                    <div class="neon-line pink"></div>
+                    <p class="body-text" data-i18n="ev-p">Cumpleaños, despedidas, eventos corporativos — los hacemos
+                        todos y bien. Nuestro equipo se encarga de todo para que tú solo disfrutes.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> <span data-i18n="f1">Mesa VIP decorada + botella de
+                                regalo</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="f2">DJ privado bajo petición</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="f3">Menú de cócteles exclusivo</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="f4">Coordinador de eventos dedicado</span>
+                        </li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="f5">Servicio de catering gourmet</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="f6">Decoración personalizada con tu
+                                nombre</span></li>
+                    </ul>
+                    <a href="#reserva" class="btn-primary pink-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-i18n="ev-btn">Organizar mi Evento</span>
+                    </a>
+                </div>
+                <div class="split-visual">
+                    <div class="club-img-frame">
+                        <img src="bg.png" alt="Eventos en Havana" class="club-photo">
+                        <div class="img-glow pink-glow"></div>
+                    </div>
+                    <div class="floating-tag tag-3">🎂 ¡Cumpleaños!</div>
+                    <div class="floating-tag tag-4">🥂 VIP</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOTOS ===================== -->
+    <section id="fotos" class="section fotos-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="eyebrow neon-text" data-i18n="ph-ey">📸 Galería</p>
+                <h2 class="section-heading light" data-i18n="ph-h">Momentos <span class="neon-text">Havana</span></h2>
+                <div class="neon-line centered"></div>
+            </div>
+            <div class="gallery-masonry" id="dynamic-photos">
+                <!-- Videos and photos loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CARTA ===================== -->
+    <section id="carta" class="section carta-section">
+        <div class="carta-bg-fx">
+            <div class="carta-orb-1"></div>
+            <div class="carta-orb-2"></div>
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <p class="eyebrow neon-text" data-i18n="carta-ey">🍹 Bebidas</p>
+                <h2 class="section-heading light" data-i18n="carta-h">Nuestra <span class="neon-text">Carta</span></h2>
+                <div
+                    style="color: #ffd700; font-family: 'Orbitron'; font-size: 0.8rem; letter-spacing: 5px; margin-top: -10px; margin-bottom: 15px; opacity: 0.8;">
+                    PREMIUM MENU</div>
+                <div class="neon-line centered"></div>
+                <p class="section-subtext" data-i18n="carta-sub">Cócteles de autor, shots explosivos y bebidas premium
+                    para cada momento de la
+                    noche.</p>
+            </div>
+
+            <div id="dynamic-carta" style="margin-top: 30px;">
+                <!-- One-page carta styles generated by JS -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================== RESERVA (WhatsApp) ===================== -->
+    <section id="reserva" class="section reserva-section">
+        <div class="reserva-bg-fx">
+            <div class="r-orb r-orb-1"></div>
+            <div class="r-orb r-orb-2"></div>
+            <div class="r-laser-1"></div>
+            <div class="r-laser-2"></div>
+        </div>
+        <div class="container">
+            <div class="reserva-wrapper">
+
+                <!-- Left: Info -->
+                <div class="reserva-info">
+                    <p class="eyebrow neon-text" data-i18n="res-ey">📲 Contacto</p>
+                    <h2 class="section-heading light"><span data-i18n="res-h1">Reserva tu</span><br><span
+                            class="neon-text" data-i18n="res-h2">Mesa</span></h2>
+                    <div class="neon-line"></div>
+                    <p class="body-text" style="color:#94a3b8;" data-i18n="res-p">Rellena el formulario y te
+                        contactaremos directamente por WhatsApp para confirmar tu reserva en minutos.</p>
+
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt" style="color:var(--neon-cyan)"></i>
+                        <div>
+                            <strong data-i18n="res-addr">Dirección</strong>
+                            <span data-i18n="res-addr-v">Q6G4+F3Q, Av. Mohammed VI, Tánger</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fab fa-whatsapp" style="color:#25D366"></i>
+                        <div>
+                            <strong data-i18n="res-wa">WhatsApp Directo</strong>
+                            <span id="display-whatsapp">+212 644 347 568</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="far fa-clock" style="color:var(--neon-gold)"></i>
+                        <div>
+                            <strong data-i18n="res-hours">Horario</strong>
+                            <span data-i18n="res-hours-v">Abierto 7 días · 22h – 5h</span>
+                        </div>
+                    </div>
+
+                    <!-- Social -->
+                    <div class="social-row">
+                        <a href="#" id="link-instagram" class="s-icon" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" id="link-facebook" class="s-icon" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" id="link-whatsapp" class="s-icon s-wa" aria-label="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="#" id="link-tiktok" class="s-icon" aria-label="TikTok"><i
+                                class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="reserva-form-wrap">
+                    <div class="form-header">
+                        <i class="fab fa-whatsapp form-wa-icon"></i>
+                        <div>
+                            <h3 data-i18n="fh-title">Reserva vía WhatsApp</h3>
+                            <p data-i18n="fh-sub">Respuesta garantizada en &lt; 10 minutos</p>
+                        </div>
+                    </div>
+
+                    <form class="reserva-form" id="reservaForm">
+                        <div class="form-row">
+                            <div class="f-group">
+                                <label for="r-name"><i class="fas fa-user"></i> <span data-i18n="l-name">Nombre
+                                        *</span></label>
+                                <input type="text" id="r-name" data-i18n="ph-name" placeholder="Tu nombre completo"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="f-group">
+                                <label for="r-phone"><i class="fas fa-phone"></i> <span data-i18n="l-phone">Teléfono
+                                        *</span></label>
+                                <input type="tel" id="r-phone" data-i18n="ph-phone" placeholder="+212 6XX XXX XXX"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-row two-col">
+                            <div class="f-group">
+                                <label for="r-date"><i class="fas fa-calendar"></i> <span data-i18n="l-date">Fecha
+                                        *</span></label>
+                                <input type="date" id="r-date" required>
+                            </div>
+                            <div class="f-group">
+                                <label for="r-guests"><i class="fas fa-users"></i> <span data-i18n="l-guests">Personas
+                                        *</span></label>
+                                <select id="r-guests" required>
+                                    <option value="" data-i18n-opt="sel-guests">Nº personas</option>
+                                    <option value="1-2" data-i18n-opt="g1">1-2 personas</option>
+                                    <option value="3-5" data-i18n-opt="g2">3-5 personas</option>
+                                    <option value="6-10" data-i18n-opt="g3">6-10 personas</option>
+                                    <option value="10-20" data-i18n-opt="g4">10-20 personas</option>
+                                    <option value="20+" data-i18n-opt="g5">+20 personas</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="f-group">
+                                <label for="r-type"><i class="fas fa-star"></i> <span data-i18n="l-type">Tipo de
+                                        evento</span></label>
+                                <select id="r-type">
+                                    <option value="Mesa VIP" data-i18n-opt="t1">Mesa VIP</option>
+                                    <option value="Cumpleaños" data-i18n-opt="t2">🎂 Cumpleaños</option>
+                                    <option value="Despedida" data-i18n-opt="t3">🎉 Despedida de soltero/a</option>
+                                    <option value="Evento corporativo" data-i18n-opt="t4">💼 Evento Corporativo</option>
+                                    <option value="Reserva general" data-i18n-opt="t5">🎫 Reserva General</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="f-group">
+                                <label for="r-msg"><i class="fas fa-comment"></i> <span
+                                        data-i18n="l-msg">Mensaje</span></label>
+                                <textarea id="r-msg" rows="3" data-i18n="ph-msg"
+                                    placeholder="Cuéntanos más sobre tu evento, peticiones especiales..."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="wa-submit-btn" id="submitBtn">
+                            <i class="fab fa-whatsapp"></i>
+                            <span data-i18n="wa-btn">Enviar a WhatsApp</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
+                        <p class="form-note" data-i18n="form-note">Al enviar, abrirás WhatsApp con tu reserva lista para
+                            confirmar.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== MAP / LOCATION ===================== -->
+    <section class="section map-section" id="map">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <p class="eyebrow neon-text" data-i18n="loc-ey">📍 Location</p>
+                <h2 class="section-heading light" data-i18n="loc-h">WHERE TO <span class="neon-text">FIND US</span></h2>
+                <div class="neon-line centered"></div>
+            </div>
+
+            <div class="map-wrapper">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12952.645705354964!2d-5.7892542!3d35.7725925!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c7fce2c9b7641%3A0x90b7b985386e7a35!2sHavana%20Beach%20Club!5e0!3m2!1sen!2sma!4v1741143213000!5m2!1sen!2sma"
+                    width="100%" height="450" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div class="map-cta">
+                    <a href="https://www.google.com/maps/place/havana+beach+club/data=!4m2!3m1!1s0xd0c7fce2c9b7641:0x90b7b985386e7a35"
+                        target="_blank" class="btn-ghost" data-i18n="loc-btn">
+                        Open in Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo tropic-logo">
+                <div class="sunset-circle"></div>
+                <div class="logo-icon"><i class="fas fa-palm-tree"></i></div>
+                <div class="logo-text">
+                    <span class="nav-logo-main tropic-script">Havana</span>
+                    <span class="nav-logo-sub">TROPICANA NIGHTS</span>
+                </div>
+            </div>
+            <p class="footer-text" data-i18n="footer-copy">© 2026 Havana Beach Club · Tánger, Marruecos · Todos los
+                derechos reservados</p>
+            <div class="footer-nav">
+                <a href="#el-club" data-i18n="nav-club">El Club</a>
+                <a href="#carta" data-i18n="nav-menu">Carta</a>
+                <a href="#map" data-i18n="res-addr">Ubicación</a>
+                <a href="#reserva" data-i18n="nav-res">Reservar</a>
+            </div>
+        </div>
+        <div
+            style="text-align: center; opacity: 0.03; font-size: 10px; margin-top: 20px; font-family: sans-serif; pointer-events: none; user-select: none;">
+            ihsan</div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" onclick="closeLightbox()"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:10000; cursor:zoom-out; align-items:center; justify-content:center; opacity:0; transition: opacity 0.3s ease;">
+        <div id="lb-content" style="position:relative; transform: scale(1); transition: transform 0.3s ease;"></div>
+        <button onclick="closeLightbox()"
+            style="position:absolute; top:20px; right:20px; background:none; border:none; color:white; font-size:2rem; cursor:pointer;"><i
+                class="fas fa-times"></i></button>
+    </div>
+
+    <script>
+        // ---- NAVBAR ----
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        const navMenuWrapper = document.getElementById('navMenuWrapper');
+        function closeMobileMenu() {
+            hamburger.classList.remove('open');
+            navMenuWrapper.classList.remove('open');
+            document.body.classList.remove('menu-open');
+        }
+
+        hamburger.addEventListener('click', () => {
+            const isOpen = hamburger.classList.toggle('open');
+            navMenuWrapper.classList.toggle('open');
+            document.body.classList.toggle('menu-open', isOpen);
+        });
+
+        // Close when clicking ANY link inside the menu or the logo
+        document.querySelectorAll('.nav-item, .lang-btn, .grand-logo').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // ---- ACTIVE NAV ----
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-item[data-section]');
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    navItems.forEach(n => n.classList.remove('active'));
+                    const id = e.target.getAttribute('id');
+                    const a = document.querySelector(`.nav-item[data-section="${id}"]`);
+                    if (a) a.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        sections.forEach(s => io.observe(s));
+
+        // ---- CARTA TABS ----
+        document.querySelectorAll('.c-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.c-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.c-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                const panel = document.getElementById('tab-' + tab.dataset.tab);
+                if (panel) panel.classList.add('active');
+            });
+        });
+
+        // ---- WHATSAPP FORM ----
+        let currentWANumber = '212644347568'; // Fallback
+
+        document.getElementById('reservaForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('r-name').value.trim();
+            const phone = document.getElementById('r-phone').value.trim();
+            const date = document.getElementById('r-date').value;
+            const guests = document.getElementById('r-guests').value;
+            const type = document.getElementById('r-type').value;
+            const msg = document.getElementById('r-msg').value.trim();
+
+            if (!name || !phone || !date || !guests) {
+                alert('Por favor, completa los campos obligatorios (*).');
+                return;
+            }
+
+            let waMsg = `🏖️ *RESERVA – HAVANA BEACH CLUB*\n\n`;
+            waMsg += `👤 *Nombre:* ${name}\n`;
+            waMsg += `📞 *Teléfono:* ${phone}\n`;
+            waMsg += `📅 *Fecha:* ${date}\n`;
+            waMsg += `👥 *Personas:* ${guests}\n`;
+            waMsg += `🎉 *Evento:* ${type}\n`;
+            if (msg) waMsg += `💬 *Mensaje:* ${msg}\n`;
+            waMsg += `\n¡Hola! Me gustaría confirmar esta reserva. Gracias 🙌`;
+
+            const waUrl = `https://wa.me/${currentWANumber}?text=${encodeURIComponent(waMsg)}`;
+
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = `<i class="fab fa-whatsapp"></i> ¡Abriendo WhatsApp! ✓`;
+            btn.style.background = '#25D366';
+            setTimeout(() => {
+                btn.innerHTML = `<i class="fab fa-whatsapp"></i> Enviar a WhatsApp <span class="btn-arrow">→</span>`;
+                btn.style.background = '';
+            }, 3000);
+
+            window.open(waUrl, '_blank');
+        });
+
+        // ---- LIGHTBOX / FULL SCREEN VIEW ----
+        function openLightbox(src, type = 'image') {
+            const lb = document.getElementById('lightbox');
+            const content = document.getElementById('lb-content');
+            content.innerHTML = '';
+
+            if (type === 'video') {
+                content.innerHTML = `<video src="${src}" controls autoplay style="max-width:90vw; max-height:80vh; border-radius:10px; box-shadow: 0 0 50px rgba(0,245,255,0.5);"></video>`;
+            } else {
+                content.innerHTML = `<img src="${src}" style="max-width:90vw; max-height:80vh; border-radius:10px; box-shadow: 0 0 50px rgba(0,245,255,0.5); border: 2px solid rgba(255,255,255,0.1);">`;
+            }
+
+            lb.style.display = 'flex';
+            setTimeout(() => lb.style.opacity = '1', 10);
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            lb.style.opacity = '0';
+            setTimeout(() => {
+                lb.style.display = 'none';
+                document.getElementById('lb-content').innerHTML = '';
+            }, 300);
+        }
+
+        // ---- FETCH DYNAMIC DATA ----
+        async function loadDynamicContent() {
+            try {
+                const res = await fetch('/api/data?t=' + Date.now());
+                if (!res.ok) throw new Error('Failed to fetch data');
+                const data = await res.json();
+                console.log('Site Data Loaded:', data);
+
+                // 1) Render Events
+                if (data.events && Array.isArray(data.events)) {
+                    const eventsHtml = data.events.map(ev => `
+                        <div class="poster-card" style="background-image: url('${ev.image || 'bg.png'}');" onclick="openLightbox('${ev.image || 'bg.png'}')">
+                            <div class="poster-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 40%, ${ev.themeColor || '#000'}88 100%);"></div>
+                            <div class="poster-content">
+                                <div class="poster-logo-box">
+                                    <div class="poster-logo-main">HAVANA</div>
+                                    <div class="poster-logo-sub">CLUB</div>
+                                </div>
+                                <div class="poster-bottom">
+                                    <div class="poster-day">${ev.day || ''}</div>
+                                    <div class="poster-date">${ev.date || ''}</div>
+                                    <div class="poster-details">${ev.details || ''}</div>
+                                    <div class="poster-music">MUSIC BY <strong>${ev.musicBy || 'DJ'}</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                    document.getElementById('dynamic-events').innerHTML = eventsHtml;
+                }
+
+                // 2) Render Carta (Premium Redesign)
+                if (data.carta && data.carta.drinks && Array.isArray(data.carta.drinks)) {
+                    const drinksByCategory = {};
+                    data.carta.drinks.forEach(d => {
+                        const cat = d.category || 'Otros';
+                        if (!drinksByCategory[cat]) drinksByCategory[cat] = [];
+                        drinksByCategory[cat].push(d);
+                    });
+
+                    // Fixed order to match user images
+                    const categoryOrder = [
+                        'Champagnes', 'Rhum', 'Vodka', 'Gin', 'Whisky',
+                        'Bières', 'Apèritif', 'Liqueur',
+                        'Cocktails Alcoolisès', 'Cocktails sans Alcoolisès',
+                        'Single Malt', 'Cognac', 'Tequilla', 'Shooter', 'Softs'
+                    ];
+
+                    const dualPriceCats = ['Rhum', 'Vodka', 'Gin', 'Whisky', 'Single Malt'];
+
+                    let cartaHtml = '<div class="premium-menu-container">';
+
+                    categoryOrder.forEach(cat => {
+                        if (!drinksByCategory[cat]) return;
+
+                        cartaHtml += `
+                        <div class="menu-category-block">
+                            <h3 class="menu-category-title">${cat}</h3>`;
+
+                        if (dualPriceCats.includes(cat)) {
+                            cartaHtml += `
+                            <div class="menu-header-row">
+                                <span>Verre</span>
+                                <span>Bouteille</span>
+                            </div>`;
+                        }
+
+                        drinksByCategory[cat].forEach(d => {
+                            cartaHtml += `
+                            <div class="menu-item-row" ${d.image ? `onclick="openLightbox('${d.image}')" style="cursor:zoom-in;"` : ''}>
+                                <div class="menu-item-name">${d.name}</div>
+                                <div class="menu-item-spacer"></div>
+                                <div class="menu-item-prices">`;
+
+                            if (dualPriceCats.includes(cat)) {
+                                cartaHtml += `
+                                    <span class="menu-price-val">${d.price || '---'}</span>
+                                    <span class="menu-price-val">${d.tablePrice || '---'}</span>`;
+                            } else {
+                                // Single price categories
+                                const displayedPrice = d.price || d.tablePrice || '---';
+                                cartaHtml += `<span class="menu-price-val">${displayedPrice}</span>`;
+                            }
+
+                            cartaHtml += `
+                                </div>
+                            </div>`;
+                        });
+
+                        cartaHtml += `</div>`;
+                    });
+
+                    cartaHtml += '</div>';
+
+                    // 2.5) Add the "Digital Boards" (Automatic if photos are tagged with 'Menu' or 'Board' in Alt text)
+                    const boardPhotos = data.photos.filter(p =>
+                        p.alt && (p.alt.toLowerCase().includes('menu') || p.alt.toLowerCase().includes('board'))
+                    );
+
+                    if (boardPhotos.length > 0) {
+                        cartaHtml += `
+                            <div style="margin-top: 50px; text-align: center;">
+                                <p class="eyebrow neon-cyan" style="margin-bottom: 20px; letter-spacing:3px;">🖼️ DIGITAL BOARDS</p>
+                                <div style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; justify-content: center; flex-wrap: wrap;">
+                                    ${boardPhotos.map(p => `
+                                        <div class="board-card" style="position:relative; width:220px; transition:all 0.3s;" onclick="openLightbox('${p.src}')">
+                                            <img src="${p.src}" style="width: 100%; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.4); box-shadow: 0 10px 20px rgba(0,0,0,0.5); cursor: pointer;">
+                                            <div style="position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.7); padding:5px; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center;">
+                                                <i class="fas fa-search-plus" style="font-size:0.8rem; color:#ffd700;"></i>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    document.getElementById('dynamic-carta').innerHTML = cartaHtml || '<p style="text-align:center; opacity:0.5;">No drinks available yet.</p>';
+                }
+
+                // 3) Render Photos
+                if (data.photos && Array.isArray(data.photos)) {
+                    const photosHtml = data.photos.map((p, index) => {
+                        const isTall = index % 3 === 0;
+                        const isWide = index % 5 === 0 && (index > 0);
+                        const media = p.type === 'video'
+                            ? `<video src="${p.src}" autoplay muted loop style="width:100%;height:100%;object-fit:cover;"></video>`
+                            : `<img src="${p.src}" alt="${p.alt || 'Gallery'}" style="width:100%;height:100%;object-fit:cover;">`;
+
+                        return `
+                        <div class="g-item ${isTall ? 'g-tall' : ''} ${isWide ? 'g-wide' : ''}" onclick="openLightbox('${p.src}', '${p.type}')">
+                            ${media}
+                            <div class="g-overlay"><i class="fas fa-expand-alt"></i></div>
+                        </div>
+                        `;
+                    }).join('');
+                    document.getElementById('dynamic-photos').innerHTML = photosHtml;
+                }
+
+                if (data.settings) {
+                    const s = data.settings;
+                    const waLink = s.whatsapp ? `https://wa.me/${s.whatsapp.replace(/\+/g, '').replace(/\s/g, '')}` : '#';
+
+                    if (document.getElementById('display-whatsapp')) document.getElementById('display-whatsapp').innerText = s.phone || s.whatsapp;
+
+                    // Main reserva social links
+                    if (document.getElementById('link-instagram')) document.getElementById('link-instagram').href = s.instagram || '#';
+                    if (document.getElementById('link-facebook')) document.getElementById('link-facebook').href = s.facebook || '#';
+                    if (document.getElementById('link-tiktok')) document.getElementById('link-tiktok').href = s.tiktok || '#';
+                    if (document.getElementById('link-whatsapp')) document.getElementById('link-whatsapp').href = waLink;
+
+                    // Top bar social links
+                    if (document.getElementById('top-link-instagram')) document.getElementById('top-link-instagram').href = s.instagram || '#';
+                    if (document.getElementById('top-link-facebook')) document.getElementById('top-link-facebook').href = s.facebook || '#';
+                    if (document.getElementById('top-link-tiktok')) document.getElementById('top-link-tiktok').href = s.tiktok || '#';
+                    if (document.getElementById('top-link-whatsapp')) document.getElementById('top-link-whatsapp').href = waLink;
+
+                    if (s.whatsapp) {
+                        currentWANumber = s.whatsapp.replace(/\+/g, '').replace(/\s/g, '');
+                    }
+                }
+
+                // Re-apply animations
+                setTimeout(() => {
+                    const revealEls = document.querySelectorAll('.poster-card, .drink-card, .g-item');
+                    revealEls.forEach(el => revealObserver.observe(el));
+                }, 500);
+
+            } catch (err) {
+                console.error('Failed to load dynamic content', err);
+                document.getElementById('dynamic-carta').innerHTML = '<p style="text-align:center; color:red;">Error loading carta. Please refresh.</p>';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadDynamicContent);
+
+    </script>
+
+</body>
+
+</html>

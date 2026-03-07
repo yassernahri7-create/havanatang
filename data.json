@@ -1,0 +1,640 @@
+{
+  "events": [
+    {
+      "id": "ev-1",
+      "image": "/uploads/1772219888099.png",
+      "day": "SUNDAY",
+      "date": "DOMINGO 8 FEBRERO",
+      "details": "ENTRADA LIBRE TODA LA NOCHE\nHAPPY HOUR DE 22H A 00H",
+      "musicBy": "DJ MARTINEZ",
+      "themeColor": "#ff2d2d"
+    },
+    {
+      "id": "ev-2",
+      "image": "/uploads/1772219876813.png",
+      "day": "SATURDAY",
+      "date": "SÁBADO 7 FEBRERO",
+      "details": "ENTRADA LIBRE TODA LA NOCHE\nHAPPY HOUR DE 21H A 23H\nCOPAS 7,5€",
+      "musicBy": "DJ MARTINEZ",
+      "themeColor": "#4f72ff"
+    },
+    {
+      "id": "ev-3",
+      "image": "/uploads/1772219758531.png",
+      "day": "FRIDAY",
+      "date": "VIERNES 6 FEBRERO",
+      "details": "ENTRADA LIBRE TODA LA NOCHE\nHAPPY HOUR DE 21H A 23H\nCOPAS 7€",
+      "musicBy": "DJ MARTINEZ",
+      "themeColor": "#00f5ff"
+    },
+    {
+      "id": "ev-1772840751272",
+      "image": "/uploads/1772840751242.png",
+      "day": "MONDAY",
+      "date": "31/07/2026",
+      "details": "HJGJYFHFHFHTFHTF",
+      "musicBy": "HGFHGF",
+      "themeColor": "#ff2e2e"
+    }
+  ],
+  "carta": {
+    "drinks": [
+      {
+        "id": "d-b1",
+        "name": "Heineken 30 cl ",
+        "category": "Bières",
+        "price": "70 DH",
+        "tablePrice": ""
+      },
+      {
+        "id": "d-b2",
+        "name": "San Miguel",
+        "price": "50 DH",
+        "tablePrice": "",
+        "category": "Bières"
+      },
+      {
+        "id": "d-b3",
+        "name": "Budweiser 20,7",
+        "price": "50 DH",
+        "tablePrice": "",
+        "category": "Bières"
+      },
+      {
+        "id": "d-b4",
+        "name": "Casablanca 33 cl",
+        "price": "60 DH",
+        "tablePrice": "",
+        "category": "Bières"
+      },
+      {
+        "id": "d-b5",
+        "name": "Smirnof ice",
+        "price": "60 DH",
+        "tablePrice": "",
+        "category": "Bières"
+      },
+      {
+        "id": "d-b6",
+        "name": "Corona",
+        "price": "60 DH",
+        "tablePrice": "",
+        "category": "Bières"
+      },
+      {
+        "id": "d-a1",
+        "name": "Pastis 51",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Apèritif"
+      },
+      {
+        "id": "d-a2",
+        "name": "Ricard",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Apèritif"
+      },
+      {
+        "id": "d-a3",
+        "name": "Campari",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Apèritif"
+      },
+      {
+        "id": "d-a4",
+        "name": "Fernet Branca",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Apèritif"
+      },
+      {
+        "id": "d-a5",
+        "name": "Jagermeister",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Apèritif"
+      },
+      {
+        "id": "d-a6",
+        "name": "Martini",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Apèritif"
+      },
+      {
+        "id": "d-l1",
+        "name": "Malibu",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Liqueur"
+      },
+      {
+        "id": "d-l2",
+        "name": "Kahlua",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Liqueur"
+      },
+      {
+        "id": "d-l3",
+        "name": "Get 27",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Liqueur"
+      },
+      {
+        "id": "d-l4",
+        "name": "Baileys",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Liqueur"
+      },
+      {
+        "id": "d-l5",
+        "name": "Jagermeister",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Liqueur"
+      },
+      {
+        "id": "d-l6",
+        "name": "Amaretto",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Liqueur"
+      },
+      {
+        "id": "d-sm1",
+        "name": "The Glentivet 12",
+        "price": "70 DH",
+        "tablePrice": "1200 DH",
+        "category": "Single Malt"
+      },
+      {
+        "id": "d-sm2",
+        "name": "The Glentivet 15",
+        "price": "80 DH",
+        "tablePrice": "1400 DH",
+        "category": "Single Malt"
+      },
+      {
+        "id": "d-sm3",
+        "name": "The Glentivet 18",
+        "price": "90 DH",
+        "tablePrice": "1500 DH",
+        "category": "Single Malt"
+      },
+      {
+        "id": "d-sm4",
+        "name": "The Glentivet 21",
+        "price": "200 DH",
+        "tablePrice": "4000 DH",
+        "category": "Single Malt"
+      },
+      {
+        "id": "d-sm5",
+        "name": "Glenfiddich 12",
+        "price": "70 DH",
+        "tablePrice": "1200 DH",
+        "category": "Single Malt"
+      },
+      {
+        "id": "d-sm6",
+        "name": "Glenfiddich 15",
+        "price": "80 DH",
+        "tablePrice": "1400 DH",
+        "category": "Single Malt"
+      },
+      {
+        "id": "d-c1",
+        "name": "Martel VS",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Cognac"
+      },
+      {
+        "id": "d-c2",
+        "name": "Martel VSOP",
+        "price": "80 DH",
+        "tablePrice": "",
+        "category": "Cognac"
+      },
+      {
+        "id": "d-c3",
+        "name": "Martel XO",
+        "price": "100 DH",
+        "tablePrice": "",
+        "category": "Cognac"
+      },
+      {
+        "id": "d-c4",
+        "name": "Courvoisier VSOP",
+        "price": "80 DH",
+        "tablePrice": "",
+        "category": "Cognac"
+      },
+      {
+        "id": "d-c5",
+        "name": "Hennessy VS",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Cognac"
+      },
+      {
+        "id": "d-c6",
+        "name": "Rèmy Martin VSOP",
+        "price": "80 DH",
+        "tablePrice": "",
+        "category": "Cognac"
+      },
+      {
+        "id": "d-t1",
+        "name": "Olmeca Altos Plata",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Tequilla"
+      },
+      {
+        "id": "d-t2",
+        "name": "Olmeca Altos Reposado",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Tequilla"
+      },
+      {
+        "id": "d-t3",
+        "name": "Camino",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Tequilla"
+      },
+      {
+        "id": "d-sh1",
+        "name": "Samboca",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Shooter"
+      },
+      {
+        "id": "d-sh2",
+        "name": "B52",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Shooter"
+      },
+      {
+        "id": "d-s1",
+        "name": "Soda",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Softs"
+      },
+      {
+        "id": "d-s2",
+        "name": "Jus de fruits",
+        "price": "70 DH",
+        "tablePrice": "",
+        "category": "Softs"
+      },
+      {
+        "id": "d-s3",
+        "name": "Red Bull",
+        "price": "100 DH",
+        "tablePrice": "",
+        "category": "Softs"
+      },
+      {
+        "id": "d-ch1",
+        "name": "Mumm Cordon Rouge",
+        "price": "",
+        "tablePrice": "1200 DH",
+        "category": "Champagnes"
+      },
+      {
+        "id": "d-ch2",
+        "name": "Mumm Rosè",
+        "price": "",
+        "tablePrice": "1200 DH",
+        "category": "Champagnes"
+      },
+      {
+        "id": "d-ch3",
+        "name": "Perrier Jouèt Grand Brut",
+        "price": "",
+        "tablePrice": "1800 DH",
+        "category": "Champagnes"
+      },
+      {
+        "id": "d-ch4",
+        "name": "Launrent perrier B rut",
+        "price": "",
+        "tablePrice": "1200 DH",
+        "category": "Champagnes"
+      },
+      {
+        "id": "d-ch5",
+        "name": "Launrent Perrier Rosè",
+        "price": "",
+        "tablePrice": "1800 DH",
+        "category": "Champagnes"
+      },
+      {
+        "id": "d-r1",
+        "name": "Havana 7 Ans",
+        "price": "80 DH",
+        "tablePrice": "1200 DH",
+        "category": "Rhum"
+      },
+      {
+        "id": "d-r2",
+        "name": "Bacardi Blanc",
+        "price": "70 DH",
+        "tablePrice": "1000 DH",
+        "category": "Rhum"
+      },
+      {
+        "id": "d-v1",
+        "name": "Absolut Bleue",
+        "price": "70 DH",
+        "tablePrice": "1000 DH",
+        "category": "Vodka"
+      },
+      {
+        "id": "d-v2",
+        "name": "Ciroc",
+        "price": "80 DH",
+        "tablePrice": "1200 DH",
+        "category": "Vodka"
+      },
+      {
+        "id": "d-v3",
+        "name": "Belvedere",
+        "price": "80 DH",
+        "tablePrice": "1200 DH",
+        "category": "Vodka"
+      },
+      {
+        "id": "d-g1",
+        "name": "Beefeater",
+        "price": "70 DH",
+        "tablePrice": "1000 DH",
+        "category": "Gin"
+      },
+      {
+        "id": "d-g2",
+        "name": "Bombay Original",
+        "price": "80 DH",
+        "tablePrice": "1200 DH",
+        "category": "Gin"
+      },
+      {
+        "id": "d-g3",
+        "name": "Hendrinck's",
+        "price": "80 DH",
+        "tablePrice": "1200 DH",
+        "category": "Gin"
+      },
+      {
+        "id": "d-g4",
+        "name": "Tanqueray",
+        "price": "80 DH",
+        "tablePrice": "1200 DH",
+        "category": "Gin"
+      },
+      {
+        "id": "d-g5",
+        "name": "Gordon's",
+        "price": "70 DH",
+        "tablePrice": "1000 DH",
+        "category": "Gin"
+      },
+      {
+        "id": "d-w1",
+        "name": "Ballantine's Finest",
+        "price": "70 DH",
+        "tablePrice": "1000 DH",
+        "category": "Whisky"
+      },
+      {
+        "id": "d-w2",
+        "name": "Chivas 12ans",
+        "price": "80 DH",
+        "tablePrice": "1200 DH",
+        "category": "Whisky"
+      },
+      {
+        "id": "d-w3",
+        "name": "Jack daniel's",
+        "price": "80 DH",
+        "tablePrice": "1200 DH",
+        "category": "Whisky"
+      },
+      {
+        "id": "d-w4",
+        "name": "Jack daniel's Honney",
+        "price": "80 DH",
+        "tablePrice": "1200 DH",
+        "category": "Whisky"
+      },
+      {
+        "id": "d-w5",
+        "name": "Red Label",
+        "price": "70 DH",
+        "tablePrice": "1000 DH",
+        "category": "Whisky"
+      },
+      {
+        "id": "d-w6",
+        "name": "Black Label",
+        "price": "80 DH",
+        "tablePrice": "1200 DH",
+        "category": "Whisky"
+      },
+      {
+        "id": "d-ca1",
+        "name": "Melon Tomic",
+        "price": "100 DH",
+        "tablePrice": "",
+        "category": "Cocktails Alcoolisès"
+      },
+      {
+        "id": "d-ca2",
+        "name": "Pink Lady",
+        "price": "100 DH",
+        "tablePrice": "",
+        "category": "Cocktails Alcoolisès"
+      },
+      {
+        "id": "d-ca3",
+        "name": "Aloha a la Vanille",
+        "price": "100 DH",
+        "tablePrice": "",
+        "category": "Cocktails Alcoolisès"
+      },
+      {
+        "id": "d-ca4",
+        "name": "Blue hawaiian",
+        "price": "100 DH",
+        "tablePrice": "",
+        "category": "Cocktails Alcoolisès"
+      },
+      {
+        "id": "d-ca5",
+        "name": "Lynchburg Lemonad",
+        "category": "Cocktails Alcoolisès",
+        "price": "100 DH",
+        "tablePrice": ""
+      },
+      {
+        "id": "d-ca6",
+        "name": "Elevenses",
+        "category": "Cocktails Alcoolisès",
+        "price": "100 DH",
+        "tablePrice": ""
+      },
+      {
+        "id": "d-ca7",
+        "name": "El Ouahabi 87",
+        "category": "Cocktails Alcoolisès",
+        "price": "100 DH",
+        "tablePrice": ""
+      },
+      {
+        "id": "d-ca8",
+        "name": "Zaaroura 42",
+        "category": "Cocktails Alcoolisès",
+        "price": "100 DH",
+        "tablePrice": ""
+      },
+      {
+        "id": "d-csa1",
+        "name": "Pina Moclada",
+        "category": "Cocktails sans Alcoolisès",
+        "price": "100 DH",
+        "tablePrice": ""
+      },
+      {
+        "id": "d-csa2",
+        "name": "Kiwi Cruch",
+        "category": "Cocktails sans Alcoolisès",
+        "price": "100 DH",
+        "tablePrice": ""
+      },
+      {
+        "id": "d-csa3",
+        "name": "Limonade a la Franboise",
+        "category": "Cocktails sans Alcoolisès",
+        "price": "100 DH",
+        "tablePrice": ""
+      },
+      {
+        "id": "d-csa4",
+        "name": "Fleur D'Amour",
+        "category": "Cocktails sans Alcoolisès",
+        "price": "100 DH",
+        "tablePrice": ""
+      },
+      {
+        "id": "d-csa5",
+        "name": "Lynchburg Lemonade",
+        "category": "Cocktails sans Alcoolisès",
+        "price": "100 DH",
+        "tablePrice": ""
+      },
+      {
+        "id": "d-csa6",
+        "name": "Rémy Martin VSOP",
+        "category": "Cocktails sans Alcoolisès",
+        "price": "100 DH",
+        "tablePrice": ""
+      }
+    ]
+  },
+  "photos": [
+    {
+      "id": "p-1",
+      "type": "image",
+      "src": "https://images.unsplash.com/photo-1545128485-c400e7702796?w=800&q=80",
+      "alt": "Party"
+    },
+    {
+      "id": "p-2",
+      "type": "image",
+      "src": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80",
+      "alt": "Gallery Media"
+    },
+    {
+      "id": "p-3",
+      "type": "image",
+      "src": "/uploads/1772224483883.png",
+      "alt": "Gallery Media"
+    },
+    {
+      "id": "p-4",
+      "type": "image",
+      "src": "/uploads/1772224546993.png",
+      "alt": "Gallery Media"
+    },
+    {
+      "id": "p-1772224502777",
+      "type": "image",
+      "src": "/uploads/1772224502734.png",
+      "alt": "Gallery Media"
+    },
+    {
+      "id": "p-1772224575859",
+      "type": "image",
+      "src": "/uploads/1772224575827.png",
+      "alt": "Gallery Media"
+    },
+    {
+      "id": "p-1772224586740",
+      "type": "image",
+      "src": "/uploads/1772224586717.png",
+      "alt": "Gallery Media"
+    },
+    {
+      "id": "p-1772224614782",
+      "type": "image",
+      "src": "/uploads/1772224614713.png",
+      "alt": "Gallery Media"
+    },
+    {
+      "id": "p-1772224669858",
+      "type": "image",
+      "src": "/uploads/1772224669795.png",
+      "alt": "Gallery Media"
+    },
+    {
+      "id": "p-1772224679501",
+      "type": "image",
+      "src": "/uploads/1772224679423.png",
+      "alt": "Gallery Media"
+    },
+    {
+      "id": "p-1772568095870",
+      "type": "image",
+      "src": "/uploads/1772568095746.png",
+      "alt": "the boss"
+    },
+    {
+      "id": "p-1772568404459",
+      "type": "image",
+      "src": "/uploads/1772568404432.jpeg",
+      "alt": "Gallery Media"
+    }
+  ],
+  "settings": {
+    "tiktok": "https://www.tiktok.com/@havanabeachclub",
+    "whatsapp": "+212717430045",
+    "instagram": "https://www.instagram.com/havana_tanger/",
+    "facebook": "https://www.facebook.com/havanabeachclub",
+    "phone": "+212717430045"
+  },
+  "auth": {
+    "username": "admin",
+    "password": "6543210"
+  }
+}

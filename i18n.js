@@ -1,7 +1,8 @@
 const TRANSLATIONS = {
     en: {
         "nav-club": "The Club", "nav-cal": "Events", "nav-ev": "Gigs", "nav-ph": "Gallery", "nav-menu": "Carta", "nav-res": "Book VIP",
-        "hero-badge": "🔴 OPEN TONIGHT · TANGIER · <span class='neon-gold'>THE BEST IN TOWN</span>",
+        "status-open": "OPEN NOW", "status-closed": "CLOSED",
+        "hero-badge": "<span id='status-dot' class='status-dot'></span> <span id='status-text' class='status-text'></span> · TANGIER · <span class='neon-gold'>THE BEST IN TOWN</span>",
         "hero-t1": "DANCING &", "hero-t2": "<span class='neon-text'>NIGHT CLUB</span>",
         "hero-tag": "⚡ GET THE PARTY STARTED ⚡ <br> 🕝 DOORS OPEN AT 11PM",
         "btn-res": "Book a Table", "btn-menu": "See the Menu",
@@ -46,7 +47,8 @@ const TRANSLATIONS = {
     },
     fr: {
         "nav-club": "Le Club", "nav-cal": "Agenda", "nav-ev": "Soirées", "nav-ph": "Photos", "nav-menu": "La Carte", "nav-res": "Réserver VIP",
-        "hero-badge": "🔴 OUVERT CE SOIR · TANGER · <span class='neon-gold'>THE BEST IN TOWN</span>",
+        "status-open": "OUVERT MAINTENANT", "status-closed": "FERMÉ",
+        "hero-badge": "<span id='status-dot' class='status-dot'></span> <span id='status-text' class='status-text'></span> · TANGER · <span class='neon-gold'>THE BEST IN TOWN</span>",
         "hero-t1": "DANCING &", "hero-t2": "<span class='neon-text'>NIGHT CLUB</span>",
         "hero-tag": "⚡ QUE LA FÊTE COMMENCE ⚡ <br> 🕝 OUVERT À 23H",
         "btn-res": "Réserver une Table", "btn-menu": "Voir la Carte",
@@ -91,7 +93,8 @@ const TRANSLATIONS = {
     },
     es: {
         "nav-club": "El Club", "nav-cal": "Agenda", "nav-ev": "Fiestas", "nav-ph": "Fotos", "nav-menu": "La Carta", "nav-res": "Reservar VIP",
-        "hero-badge": "🔴 ABIERTO ESTA NOCHE · TÁNGER · <span class='neon-gold'>THE BEST IN TOWN</span>",
+        "status-open": "ABIERTO AHORA", "status-closed": "CERRADO",
+        "hero-badge": "<span id='status-dot' class='status-dot'></span> <span id='status-text' class='status-text'></span> · TÁNGER · <span class='neon-gold'>THE BEST IN TOWN</span>",
         "hero-t1": "DANCING &", "hero-t2": "<span class='neon-text'>NIGHT CLUB</span>",
         "hero-tag": "⚡ QUE EMPIECE LA FIESTA ⚡ <br> 🕝 ABRIMOS A LAS 23H",
         "btn-res": "Reservar Mesa", "btn-menu": "Ver la Carta",
@@ -135,7 +138,8 @@ const TRANSLATIONS = {
     },
     ar: {
         "nav-club": "النادي", "nav-cal": "الأجواء", "nav-ev": "السهرات", "nav-ph": "الغاليري", "nav-menu": "القائمة", "nav-res": "حجز VIP",
-        "hero-badge": "🔴 مفتوح الليلة · طنجة · <span class='neon-gold'>الأفضل في المدينة</span>",
+        "status-open": "مفتوح الآن", "status-closed": "مغلق",
+        "hero-badge": "<span id='status-dot' class='status-dot'></span> <span id='status-text' class='status-text'></span> · طنجة · <span class='neon-gold'>الأفضل في المدينة</span>",
         "hero-t1": "رقص و", "hero-t2": "<span class='neon-text'>سهرات ليلية</span>",
         "hero-tag": "⚡ ابدأ الحفلة ⚡ <br> 🕝 نفتح على الساعة 11 ليلاً",
         "btn-res": "احجز طاولة", "btn-menu": "قائمة المشروبات",
@@ -207,6 +211,11 @@ function setLanguage(lang) {
         const key = el.getAttribute('data-i18n-opt');
         if (t[key] !== undefined) el.textContent = t[key];
     });
+
+    // Update opening status if function exists
+    if (typeof window.updateOpeningStatus === 'function') {
+        window.updateOpeningStatus();
+    }
 
     // Highlight active language button and update pill label
     document.querySelectorAll('.lang-btn').forEach(btn => {

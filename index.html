@@ -110,9 +110,8 @@
 
         <!-- Content -->
         <div class="hero-content">
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                <span data-i18n="hero-badge">ABIERTO ESTA NOCHE · TÁNGER</span>
+            <div class="hero-badge" id="opening-badge" data-i18n="hero-badge">
+                <!-- Status dot and text injected via i18n -->
             </div>
             <h1 class="hero-title reveal-stagger">
                 <div class="summer-vibe-decor">
@@ -777,7 +776,46 @@
                 document.getElementById('dynamic-carta').innerHTML = '<p style="text-align:center; color:red;">Error loading carta. Please refresh.</p>';
             }
         }
-        document.addEventListener('DOMContentLoaded', loadDynamicContent);
+        window.updateOpeningStatus = function () {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+
+            // Open from 10:30 PM (22:30) to 4:00 AM (04:00)
+            const isOpen = (hours > 22 || (hours === 22 && minutes >= 30) || (hours < 4));
+
+            const badge = document.getElementById('opening-badge');
+            const dot = document.getElementById('status-dot');
+            const text = document.getElementById('status-text');
+
+            if (badge && dot && text) {
+                if (isOpen) {
+                    badge.classList.remove('closed');
+                    dot.className = 'status-dot open';
+                    text.setAttribute('data-i18n', 'status-open');
+                } else {
+                    badge.classList.add('closed');
+                    dot.className = 'status-dot closed';
+                    text.setAttribute('data-i18n', 'status-closed');
+                }
+
+                // Re-apply translation for status-open/closed
+                const lang = document.documentElement.lang || 'fr';
+                if (typeof setLanguage === 'function') {
+                    // We only want to update the children of badge to avoid infinite loop
+                    const t = TRANSLATIONS[lang];
+                    const key = text.getAttribute('data-i18n');
+                    if (t && t[key]) text.innerHTML = t[key];
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadDynamicContent();
+            updateOpeningStatus();
+            // Check status every minute
+            setInterval(updateOpeningStatus, 60000);
+        });
 
     </script>
 

@@ -1137,13 +1137,29 @@ body {
     text-transform: uppercase;
 }
 
-.badge-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--neon-cyan);
+.hero-badge.closed {
+    background: rgba(255, 45, 120, 0.08);
+    border-color: rgba(255, 45, 120, 0.25);
+    color: var(--neon-pink);
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    animation: blink 1.5s ease-in-out infinite;
-    box-shadow: 0 0 8px var(--neon-cyan);
+    animation: blink 2s ease-in-out infinite;
+}
+
+.status-dot.open {
+    background: #00ff00;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px rgba(0, 255, 0, 0.4);
+}
+
+.status-dot.closed {
+    background: #ff0000;
+    box-shadow: 0 0 10px #ff0000, 0 0 20px rgba(255, 0, 0, 0.4);
+    animation: none;
+    opacity: 0.8;
 }
 
 @keyframes blink {
@@ -1151,10 +1167,12 @@ body {
     0%,
     100% {
         opacity: 1;
+        transform: scale(1);
     }
 
     50% {
-        opacity: 0.2;
+        opacity: 0.6;
+        transform: scale(1.2);
     }
 }
 

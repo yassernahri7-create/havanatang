@@ -9,6 +9,12 @@ const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
+
+// Priority routes
+app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, 'admin.html'));
+});
+
 app.use(express.static(__dirname));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
@@ -63,9 +69,6 @@ app.post('/api/login', (req, res) => {
     }
 });
 
-app.get('/admin', (req, res) => {
-    res.sendFile(path.join(__dirname, 'admin.html'));
-});
 
 app.get('/health', (req, res) => res.json({ status: 'OK', time: new Date() }));
 

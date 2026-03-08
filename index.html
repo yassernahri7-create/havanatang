@@ -646,16 +646,20 @@
                     // Fixed order to match user images
                     const categoryOrder = [
                         'Champagnes', 'Rhum', 'Vodka', 'Gin', 'Whisky',
-                        'Bières', 'Apèritif', 'Liqueur',
-                        'Cocktails Alcoolisès', 'Cocktails sans Alcoolisès',
-                        'Single Malt', 'Cognac', 'Tequilla', 'Shooter', 'Softs'
+                        'Bières', 'Apéritif', 'Liqueur',
+                        'Cocktails Alcoolisés', 'Cocktails sans Alcool',
+                        'Single Malt', 'Cognac', 'Tequila', 'Shooter', 'Softs'
                     ];
+
+                    // Identify any categories present in data but not in categoryOrder
+                    const otherCats = Object.keys(drinksByCategory).filter(c => !categoryOrder.includes(c));
+                    const fullOrder = [...categoryOrder, ...otherCats];
 
                     const dualPriceCats = ['Rhum', 'Vodka', 'Gin', 'Whisky', 'Single Malt'];
 
                     let cartaHtml = '<div class="premium-menu-container">';
 
-                    categoryOrder.forEach(cat => {
+                    fullOrder.forEach(cat => {
                         if (!drinksByCategory[cat]) return;
 
                         cartaHtml += `

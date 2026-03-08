@@ -63,6 +63,10 @@ app.post('/api/login', (req, res) => {
     }
 });
 
+app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, 'admin.html'));
+});
+
 app.get('/health', (req, res) => res.json({ status: 'OK', time: new Date() }));
 
 // Error handling middleware
@@ -76,7 +80,7 @@ app.listen(PORT, '0.0.0.0', () => {
     console.log(`Havana Beach Club - Server Started!`);
     console.log(`Port: ${PORT}`);
     console.log(`Main Site: http://localhost:${PORT}/`);
-    console.log(`Admin Site: http://localhost:${PORT}/admin.html`);
+    console.log(`Admin Site: http://localhost:${PORT}/admin`);
     console.log(`Try this if localhost fails: http://127.0.0.1:${PORT}/`);
     console.log(`=========================================`);
 });

@@ -86,42 +86,42 @@
         "name": "Pastis 51",
         "price": "70 DH",
         "tablePrice": "",
-        "category": "Apèritif"
+        "category": "Apéritif"
       },
       {
         "id": "d-a2",
         "name": "Ricard",
         "price": "70 DH",
         "tablePrice": "",
-        "category": "Apèritif"
+        "category": "Apéritif"
       },
       {
         "id": "d-a3",
         "name": "Campari",
         "price": "70 DH",
         "tablePrice": "",
-        "category": "Apèritif"
+        "category": "Apéritif"
       },
       {
         "id": "d-a4",
         "name": "Fernet Branca",
         "price": "70 DH",
         "tablePrice": "",
-        "category": "Apèritif"
+        "category": "Apéritif"
       },
       {
         "id": "d-a5",
         "name": "Jagermeister",
         "price": "70 DH",
         "tablePrice": "",
-        "category": "Apèritif"
+        "category": "Apéritif"
       },
       {
         "id": "d-a6",
         "name": "Martini",
         "price": "70 DH",
         "tablePrice": "",
-        "category": "Apèritif"
+        "category": "Apéritif"
       },
       {
         "id": "d-l1",
@@ -254,21 +254,21 @@
         "name": "Olmeca Altos Plata",
         "price": "70 DH",
         "tablePrice": "",
-        "category": "Tequilla"
+        "category": "Tequila"
       },
       {
         "id": "d-t2",
         "name": "Olmeca Altos Reposado",
         "price": "70 DH",
         "tablePrice": "",
-        "category": "Tequilla"
+        "category": "Tequila"
       },
       {
         "id": "d-t3",
         "name": "Camino",
         "price": "70 DH",
         "tablePrice": "",
-        "category": "Tequilla"
+        "category": "Tequila"
       },
       {
         "id": "d-sh1",
@@ -457,96 +457,96 @@
         "name": "Melon Tomic",
         "price": "100 DH",
         "tablePrice": "",
-        "category": "Cocktails Alcoolisès"
+        "category": "Cocktails Alcoolisés"
       },
       {
         "id": "d-ca2",
         "name": "Pink Lady",
         "price": "100 DH",
         "tablePrice": "",
-        "category": "Cocktails Alcoolisès"
+        "category": "Cocktails Alcoolisés"
       },
       {
         "id": "d-ca3",
         "name": "Aloha a la Vanille",
         "price": "100 DH",
         "tablePrice": "",
-        "category": "Cocktails Alcoolisès"
+        "category": "Cocktails Alcoolisés"
       },
       {
         "id": "d-ca4",
         "name": "Blue hawaiian",
         "price": "100 DH",
         "tablePrice": "",
-        "category": "Cocktails Alcoolisès"
+        "category": "Cocktails Alcoolisés"
       },
       {
         "id": "d-ca5",
         "name": "Lynchburg Lemonad",
-        "category": "Cocktails Alcoolisès",
+        "category": "Cocktails Alcoolisés",
         "price": "100 DH",
         "tablePrice": ""
       },
       {
         "id": "d-ca6",
         "name": "Elevenses",
-        "category": "Cocktails Alcoolisès",
+        "category": "Cocktails Alcoolisés",
         "price": "100 DH",
         "tablePrice": ""
       },
       {
         "id": "d-ca7",
         "name": "El Ouahabi 87",
-        "category": "Cocktails Alcoolisès",
+        "category": "Cocktails Alcoolisés",
         "price": "100 DH",
         "tablePrice": ""
       },
       {
         "id": "d-ca8",
         "name": "Zaaroura 42",
-        "category": "Cocktails Alcoolisès",
+        "category": "Cocktails Alcoolisés",
         "price": "100 DH",
         "tablePrice": ""
       },
       {
         "id": "d-csa1",
         "name": "Pina Moclada",
-        "category": "Cocktails sans Alcoolisès",
+        "category": "Cocktails sans Alcool",
         "price": "100 DH",
         "tablePrice": ""
       },
       {
         "id": "d-csa2",
         "name": "Kiwi Cruch",
-        "category": "Cocktails sans Alcoolisès",
+        "category": "Cocktails sans Alcool",
         "price": "100 DH",
         "tablePrice": ""
       },
       {
         "id": "d-csa3",
         "name": "Limonade a la Franboise",
-        "category": "Cocktails sans Alcoolisès",
+        "category": "Cocktails sans Alcool",
         "price": "100 DH",
         "tablePrice": ""
       },
       {
         "id": "d-csa4",
         "name": "Fleur D'Amour",
-        "category": "Cocktails sans Alcoolisès",
+        "category": "Cocktails sans Alcool",
         "price": "100 DH",
         "tablePrice": ""
       },
       {
         "id": "d-csa5",
         "name": "Lynchburg Lemonade",
-        "category": "Cocktails sans Alcoolisès",
+        "category": "Cocktails sans Alcool",
         "price": "100 DH",
         "tablePrice": ""
       },
       {
         "id": "d-csa6",
         "name": "Rémy Martin VSOP",
-        "category": "Cocktails sans Alcoolisès",
+        "category": "Cocktails sans Alcool",
         "price": "100 DH",
         "tablePrice": ""
       }

@@ -35,6 +35,15 @@
       "details": "HJGJYFHFHFHTFHTF",
       "musicBy": "HGFHGF",
       "themeColor": "#ff2e2e"
+    },
+    {
+      "id": "ev-1773012138995",
+      "image": "/uploads/1773012138980.png",
+      "day": "SANDAY",
+      "date": "8",
+      "details": "ladies night",
+      "musicBy": "DJ HANAN",
+      "themeColor": "#ff2eee"
     }
   ],
   "carta": {
@@ -70,9 +79,9 @@
       {
         "id": "d-b5",
         "name": "Smirnof ice",
-        "price": "60 DH",
-        "tablePrice": "",
-        "category": "Bières"
+        "category": "Bières",
+        "price": "80 DH",
+        "tablePrice": ""
       },
       {
         "id": "d-b6",
@@ -624,12 +633,18 @@
       "type": "image",
       "src": "/uploads/1772568404432.jpeg",
       "alt": "Gallery Media"
+    },
+    {
+      "id": "p-1773012187701",
+      "type": "image",
+      "src": "/uploads/1773012187686.png",
+      "alt": "best nights"
     }
   ],
   "settings": {
     "tiktok": "https://www.tiktok.com/@havanabeachclub",
     "whatsapp": "+212717430045",
-    "instagram": "https://www.instagram.com/havana_tanger/",
+    "instagram": "https://www.instagram.com/rrice_cafe_restaurant?igsh=MTlkdDRybHdoNTBkeg%3D%3D",
     "facebook": "https://www.facebook.com/havanabeachclub",
     "phone": "+212717430045"
   },

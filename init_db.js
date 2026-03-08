@@ -1,8 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 
-const DATA_FILE = path.join(__dirname, 'data.json');
-const UPLOADS_DIR = path.join(__dirname, 'uploads');
+const DATA_FILE = process.env.DATA_FILE || path.join(__dirname, 'data.json');
+const UPLOADS_DIR = process.env.UPLOADS_DIR || path.join(__dirname, 'uploads');
 
 const INITIAL_DATA = {
     events: [

@@ -1,0 +1,23 @@
+services:
+  havana-app:
+    build: .
+    container_name: havana-beach-club
+    restart: always
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=production
+      - DATA_FILE=/app/data/data.json
+      - UPLOADS_DIR=/app/data/uploads
+    volumes:
+      - havana_data:/app/data
+    networks:
+      - havana_network
+
+networks:
+  havana_network:
+    driver: bridge
+
+volumes:
+  havana_data:
+    driver: local

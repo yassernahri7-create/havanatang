@@ -1,23 +1,59 @@
 services:
-  havana-app:
-    build: .
-    container_name: havana-beach-club
-    restart: always
-    ports:
-      - "${PORT:-3000}:3000"
+  website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: website-production
+    image: havana-tangier-website:latest
+    restart: unless-stopped
+    command: node website-server.js
     environment:
       - NODE_ENV=production
+      - PORT=${WEBSITE_PORT:-3000}
       - DATA_FILE=/app/data/data.json
-      - UPLOADS_DIR=/app/data/uploads
+      - UPLOADS_DIR=/app/uploads
+    ports:
+      - "127.0.0.1:${WEBSITE_PORT:-3000}:${WEBSITE_PORT:-3000}"
     volumes:
-      - havana_data:/app/data
-    networks:
-      - havana_network
+      - app_data:/app/data
+      - app_uploads:/app/uploads
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:${WEBSITE_PORT:-3000}/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    # In Coolify, assign this service domain as: https://product.your-domain.com:3000
 
-networks:
-  havana_network:
-    driver: bridge
+  admin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: admin-production
+    image: havana-tangier-admin:latest
+    restart: unless-stopped
+    command: node admin-server.js
+    environment:
+      - NODE_ENV=production
+      - PORT=${ADMIN_PORT:-3100}
+      - DATA_FILE=/app/data/data.json
+      - UPLOADS_DIR=/app/uploads
+      - ADMIN_USER=${ADMIN_USER:-admin}
+      - ADMIN_PASS=${ADMIN_PASS:-change-me-now}
+      - COOKIE_SECURE=${COOKIE_SECURE:-true}
+    ports:
+      - "127.0.0.1:${ADMIN_PORT:-3100}:${ADMIN_PORT:-3100}"
+    volumes:
+      - app_data:/app/data
+      - app_uploads:/app/uploads
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:${ADMIN_PORT:-3100}/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    # In Coolify, assign this service domain as: https://admin.product.your-domain.com:3100
 
 volumes:
-  havana_data:
-    driver: local
+  app_data:
+  app_uploads:

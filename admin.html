@@ -404,21 +404,11 @@
                 <div
                     style="margin-top: 40px; padding: 25px; background: rgba(231, 76, 60, 0.05); border: 1px solid rgba(231, 76, 60, 0.2); border-radius: 12px;">
                     <h3 style="color: #e67e22; margin-top: 0;"><i class="fas fa-shield-alt"></i> Security & Access</h3>
-                    <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 20px;">Update your login credentials
-                        here. Make sure to remember them, as they are required for access.</p>
-
-                    <form id="form-auth" onsubmit="handleAuthSubmit(event)">
-                        <div class="form-group">
-                            <label>Admin Username</label>
-                            <input type="text" id="set-user" required style="border-color: rgba(255,255,255,0.1);">
-                        </div>
-                        <div class="form-group">
-                            <label>Admin Password</label>
-                            <input type="password" id="set-pass" required style="border-color: rgba(255,255,255,0.1);">
-                        </div>
-                        <button type="submit" class="btn" style="background: #e67e22; width: 100%;"><i
-                                class="fas fa-key"></i> Update Admin Credentials</button>
-                    </form>
+                    <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 12px;">Admin access is now managed on
+                        the server with the <code>ADMIN_USER</code> and <code>ADMIN_PASS</code> environment
+                        variables.</p>
+                    <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0;">If you need to rotate credentials,
+                        update the deployment environment in Coolify and redeploy the admin service.</p>
                 </div>
 
             </div>

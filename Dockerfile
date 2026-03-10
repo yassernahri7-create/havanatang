@@ -1,36 +1,26 @@
-# Production-ready Dockerfile
-FROM node:18-alpine
-
-# Install system dependencies if needed (e.g., for certain npm packages)
-RUN apk add --no-cache curl
-
-# Create app directory and data persistence directory
+FROM node:20-alpine AS base
 WORKDIR /app
-RUN mkdir -p /app/data/uploads
 
-# Install dependencies first (better caching)
 COPY package*.json ./
-RUN npm install --production
+RUN npm ci --omit=dev
 
-# Copy remaining source code
 COPY . .
 
-# Set robust paths for persistence
-ENV PORT=3000
+RUN mkdir -p /app/data /app/uploads && chown -R node:node /app
+
 ENV NODE_ENV=production
-ENV DATA_FILE=/app/data/data.json
-ENV UPLOADS_DIR=/app/data/uploads
-
-# Expose port
-EXPOSE 3000
-
-# Healthcheck to verify server is responding
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD curl -f http://localhost:3000/health || exit 1
-
-# Run as non-root user for security
-RUN chown -R node:node /app
 USER node
 
-# Start the application
-CMD ["node", "server.js"]
+FROM base AS website-production
+ENV PORT=3000
+EXPOSE 3000
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD wget -qO- http://127.0.0.1:${PORT:-3000}/health || exit 1
+CMD ["node", "website-server.js"]
+
+FROM base AS admin-production
+ENV PORT=3100
+EXPOSE 3100
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD wget -qO- http://127.0.0.1:${PORT:-3100}/health || exit 1
+CMD ["node", "admin-server.js"]

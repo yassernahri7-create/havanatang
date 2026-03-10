@@ -1,11 +1,13 @@
 {
   "name": "havana-beach-club",
   "version": "1.0.0",
-  "description": "",
-  "main": "i18n.js",
+  "description": "Havana Tangier website and admin panel",
+  "main": "website-server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node website-server.js",
+    "start:website": "node website-server.js",
+    "start:admin": "node admin-server.js",
+    "check": "node --check website-server.js && node --check admin-server.js && node --check admin.js && node --check i18n.js"
   },
   "keywords": [],
   "author": "",

@@ -5,23 +5,46 @@ window.onerror = function (msg, url, lineNo, columnNo, error) {
     return false;
 };
 
-let siteData = { events: [], carta: { drinks: [] }, photos: [], settings: {}, auth: {} };
+let siteData = { events: [], carta: { drinks: [] }, photos: [], settings: {} };
 let editingEventIndex = -1;
 let editingCartaIndex = -1;
 let editingPhotoIndex = -1;
 
-// Check Login Status
-document.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('havana_admin') === 'true') {
-        document.getElementById('login-overlay').style.display = 'none';
-        loadData();
-    } else {
-        document.getElementById('login-overlay').style.display = 'flex';
+function showLogin() {
+    document.getElementById('login-overlay').style.display = 'flex';
+}
+
+function hideLogin() {
+    document.getElementById('login-overlay').style.display = 'none';
+}
+
+async function checkSession() {
+    try {
+        const res = await fetch('/api/admin/session');
+        if (!res.ok) return false;
+        const result = await res.json();
+        return Boolean(result.authenticated);
+    } catch (_err) {
+        return false;
     }
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    if (await checkSession()) {
+        hideLogin();
+        loadData();
+        return;
+    }
+
+    showLogin();
 });
 
-function logout() {
-    localStorage.removeItem('havana_admin');
+async function logout() {
+    try {
+        await fetch('/api/admin/logout', { method: 'POST' });
+    } catch (_err) {
+        // Ignore logout network failures and fall through to reload.
+    }
     window.location.reload();
 }
 
@@ -33,7 +56,7 @@ async function handleLogin(e) {
     console.log('Attempting login with:', { username, password });
 
     try {
-        const res = await fetch('/api/login', {
+        const res = await fetch('/api/admin/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, password })
@@ -44,8 +67,7 @@ async function handleLogin(e) {
         console.log('Login response body:', result);
 
         if (res.ok) {
-            localStorage.setItem('havana_admin', 'true');
-            document.getElementById('login-overlay').style.display = 'none';
+            hideLogin();
             loadData();
         } else {
             alert('Invalid credentials: ' + (result.error || 'Unknown error'));
@@ -60,6 +82,10 @@ async function loadData() {
     console.log('Fetching site data...');
     try {
         const res = await fetch('/api/data');
+        if (res.status === 401) {
+            showLogin();
+            return;
+        }
         if (!res.ok) throw new Error('Server returned ' + res.status);
         const data = await res.json();
         console.log('Raw data loaded:', data);
@@ -71,8 +97,7 @@ async function loadData() {
                 drinks: (data.carta && data.carta.drinks) ? data.carta.drinks : []
             },
             photos: data.photos || [],
-            settings: data.settings || {},
-            auth: data.auth || {}
+            settings: data.settings || {}
         };
 
         console.log('Normalized siteData:', siteData);
@@ -97,11 +122,6 @@ function renderAll() {
             document.getElementById('set-wa').value = siteData.settings.whatsapp || '';
             document.getElementById('set-phone').value = siteData.settings.phone || '';
         }
-
-        if (siteData.auth) {
-            document.getElementById('set-user').value = siteData.auth.username || 'admin';
-            document.getElementById('set-pass').value = siteData.auth.password || '';
-        }
     } catch (e) {
         console.error('Render error:', e);
     }
@@ -121,6 +141,14 @@ async function uploadFile(fileInput) {
     const formData = new FormData();
     formData.append('image', fileInput.files[0]);
     const res = await fetch('/api/upload', { method: 'POST', body: formData });
+    if (res.status === 401) {
+        showLogin();
+        throw new Error('Authentication required');
+    }
+    if (!res.ok) {
+        const error = await res.json().catch(() => ({}));
+        throw new Error(error.error || ('Upload failed with status ' + res.status));
+    }
     const data = await res.json();
     return data.url;
 }
@@ -407,29 +435,6 @@ async function handleSettingsSubmit(e) {
     }
 }
 
-async function handleAuthSubmit(e) {
-    e.preventDefault();
-    if (!confirm('Are you sure you want to change the admin login credentials?')) return;
-
-    const btn = e.target.querySelector('button');
-    const origText = btn.innerHTML;
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Updating...';
-
-    if (!siteData.auth) siteData.auth = {};
-
-    siteData.auth.username = document.getElementById('set-user').value;
-    siteData.auth.password = document.getElementById('set-pass').value;
-
-    try {
-        await saveData();
-        btn.innerHTML = origText;
-        alert('Credentials updated successfully. Please keep them safe!');
-    } catch (err) {
-        btn.innerHTML = origText;
-        alert('Error updating credentials: ' + err.message);
-    }
-}
-
 async function deletePhoto(index) {
     if (confirm('Delete this media?')) {
         siteData.photos.splice(index, 1);
@@ -452,6 +457,10 @@ async function saveData() {
             body: JSON.stringify(siteData)
         });
 
+        if (res.status === 401) {
+            showLogin();
+            throw new Error('Authentication required');
+        }
         if (!res.ok) throw new Error('Server returned ' + res.status);
 
         btn.innerHTML = origText;

@@ -3,6 +3,7 @@ const path = require("path");
 
 const dataFile = process.env.DATA_FILE || path.join(__dirname, "data.json");
 const uploadsDir = process.env.UPLOADS_DIR || path.join(__dirname, "uploads");
+const seedFile = path.join(__dirname, "data.json");
 
 const INITIAL_DATA = {
   events: [
@@ -47,11 +48,52 @@ const INITIAL_DATA = {
   }
 };
 
+function hasNonEmptyValue(value) {
+  return typeof value === "string" && value.trim().length > 0;
+}
+
 function ensureParentDirectory(filePath) {
   const dir = path.dirname(filePath);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
+}
+
+function loadSeedData() {
+  try {
+    if (fs.existsSync(seedFile)) {
+      return normalizeData(JSON.parse(fs.readFileSync(seedFile, "utf8")));
+    }
+  } catch (error) {
+    // Fall back to the hardcoded seed if the bundled file is unreadable.
+  }
+
+  return normalizeData(INITIAL_DATA);
+}
+
+function mergeSeedData(runtimeData, seedData) {
+  const current = normalizeData(runtimeData);
+  const seed = normalizeData(seedData);
+
+  const merged = {
+    events: current.events.length > 0 ? current.events : seed.events,
+    carta: {
+      drinks: current.carta.drinks.length > 0 ? current.carta.drinks : seed.carta.drinks
+    },
+    photos: current.photos.length > 0 ? current.photos : seed.photos,
+    settings: {
+      tiktok: hasNonEmptyValue(current.settings.tiktok) ? current.settings.tiktok : seed.settings.tiktok,
+      instagram: hasNonEmptyValue(current.settings.instagram) ? current.settings.instagram : seed.settings.instagram,
+      facebook: hasNonEmptyValue(current.settings.facebook) ? current.settings.facebook : seed.settings.facebook,
+      whatsapp: hasNonEmptyValue(current.settings.whatsapp) ? current.settings.whatsapp : seed.settings.whatsapp,
+      phone: hasNonEmptyValue(current.settings.phone) ? current.settings.phone : seed.settings.phone
+    }
+  };
+
+  return {
+    merged,
+    changed: JSON.stringify(current) !== JSON.stringify(merged)
+  };
 }
 
 function ensureStorage() {
@@ -62,7 +104,7 @@ function ensureStorage() {
   }
 
   if (!fs.existsSync(dataFile)) {
-    fs.writeFileSync(dataFile, JSON.stringify(INITIAL_DATA, null, 2), "utf8");
+    fs.writeFileSync(dataFile, JSON.stringify(loadSeedData(), null, 2), "utf8");
   }
 }
 
@@ -139,9 +181,16 @@ function readData() {
 
   try {
     const raw = fs.readFileSync(dataFile, "utf8");
-    return normalizeData(JSON.parse(raw));
+    const parsed = JSON.parse(raw);
+    const { merged, changed } = mergeSeedData(parsed, loadSeedData());
+
+    if (changed) {
+      fs.writeFileSync(dataFile, JSON.stringify(merged, null, 2), "utf8");
+    }
+
+    return merged;
   } catch (error) {
-    return normalizeData(INITIAL_DATA);
+    return loadSeedData();
   }
 }
 
